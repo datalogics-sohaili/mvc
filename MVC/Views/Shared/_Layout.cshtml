@@ -16,12 +16,8 @@
     <div class="navbar navbar-inverse navbar-fixed-top">
         @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" ">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
+            <div class="navbar-header mobileonly">
+                <img src="/Content/menu-icon.svg" class="menu-icon" data-toggle="collapse" data-target=".navbar-collapse" style="float: right; margin-top: 10px" />
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -45,9 +41,7 @@
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li style="text-align: right">
-                    <a onclick="$('#wrapper').toggleClass('toggled')">
-                        <span class="glyphicon glyphicon-menu-hamburger" style="color: #FFF; margin-right: 12px"></span>
-                    </a>
+                    <img src="/Content/menu-icon.svg" class="menu-icon" id="menu-toggle" />
                 </li>
                 <li>
                     <!-- PUT BUTTON HERE -->
