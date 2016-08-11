@@ -7,6 +7,7 @@
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/leftsidebar.css" rel="stylesheet">
+    <link href="~/Content/theme.css" rel="stylesheet" />
     <script src="~/Scripts/modernizr-2.8.3.js"></script>
     <script src="~/Scripts/jquery-3.1.0.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
@@ -46,15 +47,7 @@
                 <li>
                     <!-- PUT BUTTON HERE -->
                 </li>
-                <li>
-                    <a href="#">Item 1</a>
-                </li>
-                <li>
-                    <a href="#">Item 2</a>
-                </li>
-                <li>
-                    <a href="#">Item 3</a>
-                </li>
+                @RenderSection("leftsidebar", true)
             </ul>
         </div>
         <!-- LEFT SIDEBAR END -->
@@ -70,6 +63,13 @@
             e.preventDefault();
             $("#wrapper").toggleClass("toggled");
         });
+        $(document).on("click", ".sidebar-nav li a", function (e) {
+            e.preventDefault();
+            $.get($(this).attr("href"), function (data) {
+                $("#page-content-wrapper").html(data);
+            })
+            console.log( $(this).text() )
+        })
     </script>
 </body>
 </html>

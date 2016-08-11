@@ -39,6 +39,14 @@
     margin-right: -250px;
 }
 
+#wrapper .sidebar-nav li:not(:first-child) {
+    margin-right: 40px;
+}
+
+#wrapper.toggled .sidebar-nav li:not(:first-child) {
+    margin-right: 0;
+}
+
 .sidebar-nav {
     position: absolute;
     top: 0;
@@ -56,6 +64,10 @@
         .sidebar-nav li a {
             display: block;
             text-decoration: none;
+            -webkit-transition: all 0.5s ease;
+            -moz-transition: all 0.5s ease;
+            -o-transition: all 0.5s ease;
+            transition: all 0.5s ease;
         }
 
         .sidebar-nav li:not(:first-child) a:hover {
@@ -81,7 +93,7 @@
     }
 
     #wrapper.toggled #sidebar-wrapper {
-        left: 32px;
+        left: 40px;
     }
 
     #page-content-wrapper {
@@ -92,5 +104,13 @@
     #wrapper.toggled #page-content-wrapper {
         position: relative;
         margin-right: 0;
+    }
+
+    #wrapper .sidebar-nav li:not(:first-child) {
+        margin-right: 0;
+    }
+
+    #wrapper.toggled .sidebar-nav li:not(:first-child) {
+        margin-right: 40px;
     }
 }
