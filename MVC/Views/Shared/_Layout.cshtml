@@ -23,13 +23,7 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">Main 1</a>
-                    </li>
-                    <li>
-                        <a href="#">Main 2</a>
-                    </li>
-                    <li>
-                        <a href="#">Main 3</a>
+                        @Html.ActionLink("Contact", "Index", "Contact")
                     </li>
                 </ul>
             </div>
@@ -65,10 +59,10 @@
         });
         $(document).on("click", ".sidebar-nav li a", function (e) {
             e.preventDefault();
+            history.pushState(null, null, $(this).attr("href"));
             $.get($(this).attr("href"), function (data) {
                 $("#page-content-wrapper").html(data);
             })
-            console.log( $(this).text() )
         })
     </script>
 </body>
