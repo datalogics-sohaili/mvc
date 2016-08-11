@@ -1,5 +1,63 @@
 ﻿@section leftsidebar {
     @Html.Partial("~/Views/Contact/_Menu.cshtml");
     }
-
-You are at home
+<form action="/contact/index" method="post">
+    <table style="margin-left: auto; margin-right: auto">
+        <thead>
+            <tr>
+                <th colspan="2" style="text-align: center">
+                    Send an Email
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>
+                    Name:
+                </th>
+                <td>
+                    <input type="text" class="form-control" name="name" required="required" />
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Email:
+                </th>
+                <td>
+                    <input type="text" class="form-control" name="email" required="required" />
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Phone:
+                </th>
+                <td>
+                    <input type="text" class="form-control" name="phone" required="required" />
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Subject:
+                </th>
+                <td>
+                    <input type="text" class="form-control" name="subject" required="required" />
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Message:
+                </th>
+                <td>
+                    <textarea class="form-control" name="body" required="required"></textarea>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2" style="text-align: right">
+                    <input type="submit" class="btn btn-primary" />
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</form>
