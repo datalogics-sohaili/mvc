@@ -19,6 +19,7 @@ select,
 textarea {
     max-width: 280px;
 }
+
 .menu-icon {
     height: 32px;
     width: 32px;
@@ -30,15 +31,27 @@ textarea {
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
-.menu-icon:hover {
-    background: rgba(255, 255, 255, .2);
-}
+
+    .menu-icon:hover {
+        background: rgba(255, 255, 255, .2);
+    }
+
 @media(min-width:768px) {
     .mobileonly {
-        display: none
+        display: none;
     }
 }
+
 .navbar-inverse {
     background-color: inherit;
     border-color: transparent;
+}
+
+#fullscreenoverlay {
+    z-index: 65535;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
