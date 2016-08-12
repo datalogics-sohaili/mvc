@@ -11,7 +11,7 @@ namespace MVC.Controllers
         // GET: Contact
         public ActionResult Index()
         {
-            if (Request.IsAjaxRequest() || (!string.IsNullOrEmpty(Request.Params["ajax"]) && Convert.ToBoolean(Request.Params["ajax"])))
+            if (Request.IsAjaxRequest())
                 return PartialView();
             else
                 return View();
@@ -20,7 +20,7 @@ namespace MVC.Controllers
         // GET: Contact/Showing
         public ActionResult Showing()
         {
-            if (Request.IsAjaxRequest() || (!string.IsNullOrEmpty(Request.Params["ajax"]) && Convert.ToBoolean(Request.Params["ajax"])))
+            if (Request.IsAjaxRequest())
                 return PartialView();
             else
                 return View();
