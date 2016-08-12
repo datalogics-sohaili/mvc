@@ -66,7 +66,7 @@
         $(document).on("click", ".sidebar-nav li a", function (e) {
             e.preventDefault();
             history.pushState(null, null, $(this).attr("href"));
-            $.get($(this).attr("href"), function (data) {
+            $.get($(this).attr("href") + "?ajax=true", function (data) {
                 $("#page-content-wrapper > .container-fluid").html(data);
             })
         });
@@ -87,7 +87,7 @@
             $.ajax({
                 url: action,
                 method: method,
-                data: $(this).serialize()
+                data: $(this).serialize() + "&ajax=true"
             }).done(function (data) {
                 history.pushState(null, null, action);
                 $("#page-content-wrapper > .container-fluid").html(data);
