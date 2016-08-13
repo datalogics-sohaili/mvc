@@ -8,7 +8,6 @@
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/leftsidebar.css" rel="stylesheet">
-    <link href="~/Content/Spinner.css" rel="stylesheet" />
     <link href="~/Content/theme.css" rel="stylesheet" />
     <script src="~/Scripts/modernizr-2.8.3.js"></script>
     <script src="~/Scripts/jquery-3.1.0.min.js"></script>
@@ -67,16 +66,11 @@
         $(document).on("click", ".sidebar-nav li a", function (e) {
             e.preventDefault();
             history.pushState(null, null, $(this).attr("href"));
-            $("body").append("<div id='fullscreenoverlay'><div class='sk-fading-circle'><div class='sk-circle1 sk-circle'></div><div class='sk-circle2 sk-circle'></div><div class='sk-circle3 sk-circle'></div><div class='sk-circle4 sk-circle'></div><div class='sk-circle5 sk-circle'></div><div class='sk-circle6 sk-circle'></div><div class='sk-circle7 sk-circle'></div><div class='sk-circle8 sk-circle'></div><div class='sk-circle9 sk-circle'></div><div class='sk-circle10 sk-circle'></div><div class='sk-circle11 sk-circle'></div><div class='sk-circle12 sk-circle'></div></div></div>");
             
             $.ajax({
-                url: $(this).attr("href"),
-                beforeSend: function(xhr) {
-                    xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-                }
+                url: $(this).attr("href")
             }).done(function (data) {
                 $("#page-content-wrapper > .container-fluid").html(data);
-                $("#fullscreenoverlay").remove();
             });
 
         });
@@ -93,20 +87,15 @@
             if ($(this).attr("action") !== undefined) {
                 action = $(this).attr("action");
             }
-            
-            $("body").append("<div id='fullscreenoverlay'><div class='sk-fading-circle'><div class='sk-circle1 sk-circle'></div><div class='sk-circle2 sk-circle'></div><div class='sk-circle3 sk-circle'></div><div class='sk-circle4 sk-circle'></div><div class='sk-circle5 sk-circle'></div><div class='sk-circle6 sk-circle'></div><div class='sk-circle7 sk-circle'></div><div class='sk-circle8 sk-circle'></div><div class='sk-circle9 sk-circle'></div><div class='sk-circle10 sk-circle'></div><div class='sk-circle11 sk-circle'></div><div class='sk-circle12 sk-circle'></div></div></div>");
 
             $.ajax({
                 url: action,
                 method: method,
-                data: $(this).serialize(),
-                beforeSend: function(xhr) {
-                    xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+                data: $(this).serialize()
                 }
             }).done(function (data) {
                 history.pushState(null, null, action);
                 $("#page-content-wrapper > .container-fluid").html(data);
-                $("#fullscreenoverlay").remove();
             });
         });
     </script>

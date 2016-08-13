@@ -137,7 +137,6 @@
     <Content Include="Content\leftsidebar.css" />
     <Content Include="Content\menu-icon.svg" />
     <Content Include="Content\Site.css" />
-    <Content Include="Content\Spinner.css" />
     <Content Include="Content\theme.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
