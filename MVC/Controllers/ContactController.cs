@@ -9,7 +9,7 @@ namespace MVC.Controllers
         [MinifyHtml]
         public ActionResult Index()
         {
-            if (Request.IsAjaxRequest())
+            if (Request.IsAjaxRequest() || (!string.IsNullOrEmpty(Request.Params["ajax"]) && Convert.ToBoolean(Request.Params["ajax"])))
                 return PartialView();
             else
                 return View();
@@ -19,7 +19,7 @@ namespace MVC.Controllers
         [MinifyHtml]
         public ActionResult Showing()
         {
-            if (Request.IsAjaxRequest())
+            if (Request.IsAjaxRequest() || (!string.IsNullOrEmpty(Request.Params["ajax"]) && Convert.ToBoolean(Request.Params["ajax"])))
                 return PartialView();
             else
                 return View();
