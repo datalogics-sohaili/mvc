@@ -5,14 +5,11 @@
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>@ViewBag.Title - My ASP.NET Application</title>
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/leftsidebar.css" rel="stylesheet">
-    <link href="~/Content/Spinner.css" rel="stylesheet" />
-    <link href="~/Content/theme.css" rel="stylesheet" />
-    <script src="~/Scripts/modernizr-2.8.3.js"></script>
-    <script src="~/Scripts/jquery-3.1.0.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/signalr")
+    @Scripts.Render("~/bundles/bootstrap")
 </head>
 <body id="body">
     <!-- TOP NAVBAR START -->
@@ -26,6 +23,9 @@
                 <ul class="nav navbar-nav">
                     <li>
                         @Html.ActionLink("Home", "Index", "Home")
+                    </li>
+                    <li>
+                        @Html.ActionLink("Chat", "Index", "Chat")
                     </li>
                     <li>
                         @Html.ActionLink("Contact", "Index", "Contact")
@@ -71,9 +71,7 @@
             
             $.ajax({
                 url: $(this).attr("href"),
-                beforeSend: function(xhr) {
-                    xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-                }
+                data: "X-Requested-With=XMLHttpRequest"
             }).done(function (data) {
                 $("#page-content-wrapper > .container-fluid").html(data);
                 $("#fullscreenoverlay").remove();
@@ -99,10 +97,8 @@
             $.ajax({
                 url: action,
                 method: method,
-                data: $(this).serialize(),
-                beforeSend: function(xhr) {
-                    xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-                }
+                data: "X-Requested-With=XMLHttpRequest" + $(this).serialize(),
+                crossdomain: false
             }).done(function (data) {
                 history.pushState(null, null, action);
                 $("#page-content-wrapper > .container-fluid").html(data);
