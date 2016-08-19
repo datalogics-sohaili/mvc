@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Web.Mvc;
 using WebMarkupMin.Mvc.ActionFilters;
 
 namespace MVC.Controllers

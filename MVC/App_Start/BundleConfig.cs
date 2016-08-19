@@ -24,7 +24,6 @@ namespace MVC
                       "~/Content/bootstrap-theme.css",
                       "~/Content/Site.css",
                       "~/Content/leftsidebar.css",
-                      "~/Content/Spinner.css",
                       "~/Content/theme.css"));
 
             BundleTable.EnableOptimizations = true;

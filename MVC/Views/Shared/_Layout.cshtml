@@ -67,14 +67,12 @@
         $(document).on("click", ".sidebar-nav li a", function (e) {
             e.preventDefault();
             history.pushState(null, null, $(this).attr("href"));
-            $("body").append("<div id='fullscreenoverlay'><div class='sk-fading-circle'><div class='sk-circle1 sk-circle'></div><div class='sk-circle2 sk-circle'></div><div class='sk-circle3 sk-circle'></div><div class='sk-circle4 sk-circle'></div><div class='sk-circle5 sk-circle'></div><div class='sk-circle6 sk-circle'></div><div class='sk-circle7 sk-circle'></div><div class='sk-circle8 sk-circle'></div><div class='sk-circle9 sk-circle'></div><div class='sk-circle10 sk-circle'></div><div class='sk-circle11 sk-circle'></div><div class='sk-circle12 sk-circle'></div></div></div>");
             
             $.ajax({
                 url: $(this).attr("href"),
                 data: "X-Requested-With=XMLHttpRequest"
             }).done(function (data) {
                 $("#page-content-wrapper > .container-fluid").html(data);
-                $("#fullscreenoverlay").remove();
             });
 
         });
@@ -91,8 +89,6 @@
             if ($(this).attr("action") !== undefined) {
                 action = $(this).attr("action");
             }
-            
-            $("body").append("<div id='fullscreenoverlay'><div class='sk-fading-circle'><div class='sk-circle1 sk-circle'></div><div class='sk-circle2 sk-circle'></div><div class='sk-circle3 sk-circle'></div><div class='sk-circle4 sk-circle'></div><div class='sk-circle5 sk-circle'></div><div class='sk-circle6 sk-circle'></div><div class='sk-circle7 sk-circle'></div><div class='sk-circle8 sk-circle'></div><div class='sk-circle9 sk-circle'></div><div class='sk-circle10 sk-circle'></div><div class='sk-circle11 sk-circle'></div><div class='sk-circle12 sk-circle'></div></div></div>");
 
             $.ajax({
                 url: action,
@@ -102,7 +98,6 @@
             }).done(function (data) {
                 history.pushState(null, null, action);
                 $("#page-content-wrapper > .container-fluid").html(data);
-                $("#fullscreenoverlay").remove();
             });
         });
     </script>
