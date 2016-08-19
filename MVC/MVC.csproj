@@ -205,7 +205,6 @@
     <Content Include="scripts\jquery-3.1.0.min.map" />
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\Contact\Showing.cshtml" />
-    <Content Include="Views\Contact\_Menu.cshtml" />
     <Content Include="Views\Chat\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
