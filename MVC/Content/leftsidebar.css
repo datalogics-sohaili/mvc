@@ -25,7 +25,6 @@
     bottom: 0;
     left: 0;
     right: 0;
-    padding-top: 12px;
     overflow: auto;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
@@ -79,4 +78,9 @@
 
 .sidebar-nav li a:active, .sidebar-nav li a:focus {
     text-decoration: none;
+}
+
+#page-content-wrapper > .container-fluid > a, #page-content-wrapper > .container-fluid > a:active, #page-content-wrapper > .container-fluid > a:hover {
+    text-decoration: none;
+    color: #111;
 }

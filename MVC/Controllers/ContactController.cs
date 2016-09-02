@@ -15,15 +15,5 @@ namespace MVC.Controllers
             else
                 return View();
         }
-
-        // GET: Contact/Showing
-        [MinifyHtml]
-        public ActionResult Showing()
-        {
-            if (Request.IsAjaxRequest() || (!string.IsNullOrEmpty(Request.Params["ajax"]) && Convert.ToBoolean(Request.Params["ajax"])))
-                return PartialView();
-            else
-                return View();
-        }
     }
 }

@@ -55,5 +55,11 @@ th, td {
     background: red;
 }
 .panel-title {
+    cursor: default;
     text-align: center;
+}
+
+.jumbotron {
+    padding-left: 30px;
+    padding-right: 30px;
 }
