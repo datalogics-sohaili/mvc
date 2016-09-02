@@ -50,3 +50,10 @@ th, td {
     background-color: inherit;
     border-color: transparent;
 }
+
+.panel-heading {
+    background: red;
+}
+.panel-title {
+    text-align: center;
+}
