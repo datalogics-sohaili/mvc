@@ -56,7 +56,7 @@
     <script>
         function SidebarMenu() {
             $("#page-content-wrapper > a[title != ''][name != '']").each(function (anchor_index, anchor_object) {
-                $(anchor_object).prepend("<a href='#" + $(anchor_object).attr("name") + "' style='float: right; clear: both; top: 8px; right: 8px;'><span class='glyphicon glyphicon-link'></span></a>");
+                $(anchor_object).prepend("<a href='#" + $(anchor_object).attr("name") + "' style='float: right; clear: both; margin-top: 16px; margin-right: 16px;'><span class='glyphicon glyphicon-link'></span></a>");
                 $("#sidebar-wrapper > ul.sidebar-nav").append("<li><a href='#" + $(anchor_object).attr("name") + "'>" + $(anchor_object).attr("title") + "</a></li>")
             })
         }
