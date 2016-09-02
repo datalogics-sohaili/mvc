@@ -40,6 +40,8 @@ th, td {
         background: rgba(255, 255, 255, .2);
     }
 
+
+
 @media(min-width:768px) {
     .mobileonly {
         display: none;
@@ -62,4 +64,13 @@ th, td {
 .jumbotron {
     padding-left: 30px;
     padding-right: 30px;
+    margin-bottom: 20px;
+}
+
+.navbar .container {
+    margin-left: 0;
+    margin-right: 0;
+}
+.navbar-brand {
+    width: 250px;
 }

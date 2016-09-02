@@ -80,7 +80,7 @@
     text-decoration: none;
 }
 
-#page-content-wrapper > .container-fluid > a, #page-content-wrapper > .container-fluid > a:active, #page-content-wrapper > .container-fluid > a:hover {
+#page-content-wrapper > a:not([title=""]):not([name=""]), #page-content-wrapper > a:not([title=""]):not([name=""]):active, #page-content-wrapper > a:not([title=""]):not([name=""]):hover {
     text-decoration: none;
     color: #111;
 }

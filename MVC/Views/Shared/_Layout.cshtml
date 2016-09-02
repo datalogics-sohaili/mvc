@@ -55,7 +55,7 @@
 
     <script>
         function SidebarMenu() {
-            $("#page-content-wrapper > .container-fluid > a").each(function (anchor_index, anchor_object) {
+            $("#page-content-wrapper > a[title != ''][name != '']").each(function (anchor_index, anchor_object) {
                 $("#sidebar-wrapper > ul.sidebar-nav").append("<li><a href='#" + $(anchor_object).attr("name") + "'>" + $(anchor_object).attr("title") + "</a></li>")
             })
         }
