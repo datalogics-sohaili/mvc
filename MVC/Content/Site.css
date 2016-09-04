@@ -30,10 +30,18 @@ th, td {
     margin-right: 4px;
     padding: 4px;
     border-radius: 2px;
+    display: inline-block;
+    text-align: center;
+    line-height: 20px;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
+}
+
+.menu-icon > .glyphicon {
+    font-size: 18px;
+    color: #EEE;
 }
 
     .menu-icon:hover {

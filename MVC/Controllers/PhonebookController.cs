@@ -4,9 +4,9 @@ using WebMarkupMin.Mvc.ActionFilters;
 
 namespace MVC.Controllers
 {
-    public class HomeController : Controller
+    public class PhonebookController : Controller
     {
-        // GET: Home
+        // GET: Phonebook
         [MinifyHtml]
         public ActionResult Index()
         {

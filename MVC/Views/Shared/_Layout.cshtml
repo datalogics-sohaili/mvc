@@ -17,8 +17,19 @@
         @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
         <div class="container">
             <div class="navbar-header mobileonly">
-                <img src="/Content/menu-icon.svg" class="menu-icon" data-toggle="collapse" data-target=".navbar-collapse" style="float: right; margin-top: 10px" />
+                <div style="float: right; margin-top: 10px">
+                    <!--<div class="menu-icon"><span class="glyphicon glyphicon-envelope"></span></div>-->
+                    <div class="menu-icon" data-toggle="collapse" data-target=".navbar-collapse"><span class="glyphicon glyphicon-menu-hamburger"></span></div>
+                </div>
             </div>
+            <div style="position: absolute; top: 10px; right: 37px">
+                <div class="menu-icon" data-toggle="collapse" data-target=".chatmenu"><span class="glyphicon glyphicon-envelope"></span></div>
+                <div class="collapse chatmenu" style="position: absolute; top: 28px; right: 0; width: 0; height: 0; border-left: 20px solid transparent; border-right: 20px solid transparent; border-bottom: 20px solid rgb(245, 245, 245); z-index: 1"></div>
+                <div class="collapse chatmenu" style="position: absolute; width: 246px; height: 348px; min-height: 348px; max-height: 348px; top: 40px; right: 0; overflow-y: auto; background-color: rgb(245, 245, 245); box-shadow: 0 0 0 1px #999">
+
+                </div>
+            </div>
+
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>
@@ -30,6 +41,12 @@
                     <li>
                         @Html.ActionLink("Contact", "Index", "Contact")
                     </li>
+                    <li>
+                        @Html.ActionLink("Phonebook", "Index", "Phonebook")
+                    </li>
+                    <li>
+                        @Html.ActionLink("Calendar", "Index", "Calendar")
+                    </li>
                 </ul>
             </div>
         </div>
@@ -38,11 +55,11 @@
 
     <div id="wrapper">
         <!-- LEFT SIDEBAR START -->
-        <div id="sidebar-wrapper">
+        <div id="leftsidebar-wrapper">
+            <div style="text-align: right">
+                <div class="menu-icon" id="menu-toggle"><span class="glyphicon glyphicon-menu-hamburger"></span></div>
+            </div>
             <ul class="sidebar-nav">
-                <li style="text-align: right">
-                    <img src="/Content/menu-icon.svg" class="menu-icon" id="menu-toggle" />
-                </li>
             </ul>
         </div>
         <!-- LEFT SIDEBAR END -->
@@ -57,7 +74,7 @@
         function SidebarMenu() {
             $("#page-content-wrapper > a[title != ''][name != '']").each(function (anchor_index, anchor_object) {
                 $(anchor_object).prepend("<a href='#" + $(anchor_object).attr("name") + "' style='float: right; clear: both; margin-top: 16px; margin-right: 16px;'><span class='glyphicon glyphicon-link'></span></a>");
-                $("#sidebar-wrapper > ul.sidebar-nav").append("<li><a href='#" + $(anchor_object).attr("name") + "'>" + $(anchor_object).attr("title") + "</a></li>")
+                $("#leftsidebar-wrapper > ul.sidebar-nav").append("<li><a href='#" + $(anchor_object).attr("name") + "'>" + $(anchor_object).attr("title") + "</a></li>")
             })
         }
 

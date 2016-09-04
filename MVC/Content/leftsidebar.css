@@ -6,7 +6,7 @@
     right: 0;
 }
 
-#sidebar-wrapper {
+#leftsidebar-wrapper {
     position: fixed;
     top: 54px;
     bottom: 0;
@@ -33,12 +33,12 @@
 }
 
 @media(min-width:768px) {
-    #sidebar-wrapper {
+    #leftsidebar-wrapper {
         display: block;
         width: 250px;
     }
 
-    #wrapper.toggled #sidebar-wrapper {
+    #wrapper.toggled #leftsidebar-wrapper {
         left: -210px;
     }
 
