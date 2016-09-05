@@ -5,11 +5,15 @@
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/signalr")
-    @Scripts.Render("~/bundles/bootstrap")
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body id="body">
     <!-- TOP NAVBAR START -->
@@ -110,6 +114,25 @@
                 $("#page-content-wrapper > .container-fluid").html(data);
             });
         });
+
+        function CreateChatWindow() {
+            $("body").append("<div class='panel panel-default chatwindow' style='position: absolute; top: 52px; left: 250px; width: 260px; margin: 0'>" +
+                    "<span class='glyphicon glyphicon-remove' style='float: right; right: 8px; top: 8px' onclick='$(this).parent(\".panel\").remove()'></span>" +
+                    "<div class='panel-heading'>Panel Heading</div>" +
+                    "<div class='panel-body' style='overflow-y: scroll; height: 255px'>Panel Content</div>" +
+                    "<div class='panel-footer' style='padding: 0'>" +
+                        "<div class='input-group' style='z-index: 0'>" +
+                            "<input type='text' class='form-control' />" +
+                            "<div class='input-group-btn'>" +
+                                "<button class='btn btn-primary'>Send</button>" +
+                            "</div>" +
+                        "</div>" +
+                    "</div>" +
+                "</div>");
+            $(document).ready(function () {
+                $("body .chatwindow:last-child").draggable({ handle: '.panel-heading', containment: '#page-content-wrapper' })
+            })
+        }
     </script>
 </body>
 </html>
